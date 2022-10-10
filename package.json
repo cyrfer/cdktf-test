@@ -15,7 +15,8 @@
     "monorepo"
   ],
   "workspaces": [
-    "packages/app-1"
+    "packages/app-1",
+    "packages/mongo"
   ],
   "author": "me",
   "license": "MIT",

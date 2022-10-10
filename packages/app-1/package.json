@@ -9,6 +9,7 @@
     "get": "cdktf get",
     "build": "tsc",
     "synth": "cdktf synth",
+    "deploy": "cdktf deploy",
     "compile": "tsc --pretty",
     "watch": "tsc -w",
     "test": "jest",
@@ -21,6 +22,7 @@
   },
   "dependencies": {
     "@cdktf/provider-aws": "^10.0.8",
+    "@mycompany/mongo": "^0.1.0",
     "cdktf": "^0.13.0",
     "constructs": "^10.1.127"
   },

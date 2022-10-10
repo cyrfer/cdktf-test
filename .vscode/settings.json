@@ -1,0 +1,6 @@
+{
+  "conventionalCommits.scopes": [
+    "app-1",
+    "mongo"
+  ]
+}
