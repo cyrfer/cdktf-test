@@ -1,5 +1,26 @@
+# cdtkf-test
+A starter repo for showing how to organize a monorepo that is compatile with the Terraform CDKTF.
 
-# Solorepo
+## Current usage
+First, you must specify values in [packages/app-1/.env](./packages/app-1/.env), resembling
+
+```bash
+ATLAS_PUBLIC_KEY="ommitted"
+ATLAS_PRIVATE_KEY="ommitted"
+ATLAS_ORGANIZATION_ID="ommitted"
+```
+
+Then, execute the following:
+```bash
+git clone THIS_REPO
+npm install
+npm run build -w packages/mongo
+npm run deploy -w packages/app-1
+npm run destroy -w packages/app-1
+```
+
+# History of changes
+## Solorepo
 I used CDKTF successfully by following instructions here:
 https://learn.hashicorp.com/tutorials/terraform/cdktf-install?in=terraform/cdktf
 
@@ -23,7 +44,7 @@ I modified [src/main.ts](./src/main.ts) so that it has the code you see now.
 
 Then I synthesized using `npm run synth`.
 
-# Monorepo Conversion
+## Monorepo Conversion
 To create a monorepo structure, I executed
 ```bash
 mkdir packages
@@ -52,7 +73,7 @@ and finally I showed the CDKTF still synthesizes via
 npm run synth -w packages/app-1
 ```
 
-# Mongo infra library
+## Mongo infra library
 Mongo's terraform provider can be used to generate typescript support for CDKTF.
 
 ```bash
