@@ -1,5 +1,5 @@
 import { Construct } from "constructs"
-import { TerraformStack } from "cdktf"
+import { TerraformOutput, TerraformStack } from "cdktf"
 
 import {
   MongodbatlasProvider, MongodbatlasProviderConfig,
@@ -14,6 +14,9 @@ export interface DataStackConfig {
 }
 
 export class DataStack extends TerraformStack {
+  projectId: TerraformOutput
+  clusterId: TerraformOutput
+
   constructor(scope: Construct, name: string, config: DataStackConfig) {
     super(scope, name)
 
@@ -21,9 +24,19 @@ export class DataStack extends TerraformStack {
 
     const project = new Project(this, "project", config.project)
 
-    new AdvancedCluster(this, "cluster", {
+    const cluster = new AdvancedCluster(this, "cluster", {
       ...config.cluster,
       projectId: project.id,
     })
+
+    // output
+    this.projectId = new TerraformOutput(this, "projectId", {
+      value: project.id,
+    })
+
+    this.clusterId = new TerraformOutput(this, "clusterId", {
+      value: cluster.id,
+    })
+
   }
 }

@@ -33,6 +33,7 @@ new DataStack(app, `${dataStackNamePrefix}-data`, {
     publicKey: env.data.provider.publicKey,
     privateKey: env.data.provider.privateKey,
   },
+  // TODO, cdktf destroy results in: 401 (request "") You are not authorized for this resource.
   project: {
     orgId: env.data.project.orgId,
     name: `${dataStackNamePrefix}`,
@@ -43,6 +44,7 @@ new DataStack(app, `${dataStackNamePrefix}-data`, {
     replicationSpecs: [{
       regionConfigs: [{
         electableSpecs: {
+          // TODO, avoid this error: Cannot update a M0/M2/M5 cluster through the public API.
           instanceSize: 'M2', // M0 is not supported by the Terraform adapter or cluster v5.0
           nodeCount: 3,
         },
