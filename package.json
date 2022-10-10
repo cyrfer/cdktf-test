@@ -1,35 +1,26 @@
 {
-  "name": "cdktf-test",
+  "name": "@mycompany/cdktf-test",
   "version": "0.1.0",
-  "main": "main.js",
-  "types": "main.ts",
-  "license": "MPL-2.0",
-  "private": true,
+  "description": "test cdktf",
+  "main": "dist/index.ts",
   "scripts": {
-    "get": "cdktf get",
-    "build": "tsc",
-    "synth": "cdktf synth",
-    "compile": "tsc --pretty",
-    "watch": "tsc -w",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "upgrade": "npm i cdktf@latest cdktf-cli@latest",
-    "upgrade:next": "npm i cdktf@next cdktf-cli@next"
+    "test": "jest"
   },
-  "engines": {
-    "node": ">=14.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyrfer/cdktf-test.git"
   },
-  "dependencies": {
-    "@cdktf/provider-aws": "^10.0.8",
-    "cdktf": "^0.13.0",
-    "constructs": "^10.1.127"
+  "keywords": [
+    "cdktf",
+    "monorepo"
+  ],
+  "workspaces": [
+    "packages/app-1"
+  ],
+  "author": "me",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cyrfer/cdktf-test/issues"
   },
-  "devDependencies": {
-    "@types/jest": "^29.1.2",
-    "@types/node": "^18.8.3",
-    "jest": "^29.1.2",
-    "ts-jest": "^29.0.3",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.8.4"
-  }
+  "homepage": "https://github.com/cyrfer/cdktf-test#readme"
 }

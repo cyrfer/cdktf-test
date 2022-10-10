@@ -23,7 +23,7 @@ export class MyStack extends TerraformStack {
 }
 
 const app = new App()
-new MyStack(app, "cdktf-test", {
+new MyStack(app, "app-1", {
   region: "us-east-1",
   tags: {},
 })
