@@ -1,0 +1,43 @@
+{
+  "name": "@mycompany/mongo",
+  "version": "0.1.0",
+  "description": "bundle generated mongo infra code in a lib",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "/dist/src"
+  ],
+  "devDependencies": {
+    "@types/jest": "^29.1.2",
+    "@types/node": "^18.8.3",
+    "jest": "^29.1.2",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "scripts": {
+    "test": "jest",
+    "cdktf-get": "cdktf get",
+    "build": "tsc",
+    "postinstall": "cdktf get"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyrfer/cdktf-test.git"
+  },
+  "keywords": [
+    "mongo",
+    "infra",
+    "cdktf"
+  ],
+  "author": "me",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cyrfer/cdktf-test/issues"
+  },
+  "homepage": "https://github.com/cyrfer/cdktf-test#readme",
+  "dependencies": {
+    "cdktf": "^0.13.0",
+    "constructs": "^10.1.127"
+  }
+}
